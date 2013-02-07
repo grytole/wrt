@@ -23,7 +23,7 @@ endef
 
 define Package/lualibusb1/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua
-	$(INSTALL_BIN) $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)/libusb1.so $(1)/usr/lib/lua/usb.so
+	$(INSTALL_BIN) $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)/libusb1.so $(1)/usr/lib/lua/libusb1.so
 endef
 
 $(eval $(call BuildPackage,lualibusb1))
