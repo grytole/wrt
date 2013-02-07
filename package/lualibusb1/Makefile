@@ -1,11 +1,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lualibusb1
-PKG_VERSION:=1.0
-PKG_RELEASE=1
+PKG_VERSION:=1.0.1
 
 PKG_SOURCE_URL:=http://$(PKG_NAME).googlecode.com/files
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).$(PKG_RELEASE).tar.gz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -24,7 +23,7 @@ endef
 
 define Package/lualibusb1/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/libusb1.so $(1)/usr/lib/lua/libusb.so
+	$(INSTALL_BIN) $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)/libusb1.so $(1)/usr/lib/lua/usb.so
 endef
 
 $(eval $(call BuildPackage,lualibusb1))
